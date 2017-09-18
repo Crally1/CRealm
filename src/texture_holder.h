@@ -10,7 +10,7 @@ namespace Texture
 {
     enum ID
     {
-        PLAYER, MAP, BAXKGROUND
+        PLAYER, MAP, BACKGROUND
     };
 }
 

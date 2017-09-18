@@ -1,22 +1,18 @@
 #include "game.h"
 
 Game::Game() : mWindow(sf::VideoMode(740, 470), "Crally SFML"), mTimePerFrame(sf::seconds(1.f / 60.f)),
-    mSprite(), mTexture()
+    mRoot(new SceneNode) 
 {
-    if (!mTexture.loadFromFile("/home/crally/CRealm/wizard.png"))
-    {
-        printf("Debug: Failed to load texture from file, exeiting...\n");
-        exit(1);
-    }
-    mSprite.setTexture(mTexture);
-    mSprite.setPosition(100.f, 100.f);
-    mSprite.setScale(.3f, .3f);
+    mTextures.load(Texture::PLAYER, "/home/crally/CRealm/assets/wizard.png");
 }
 
 void Game::run()
 {
     sf::Clock clock;
     sf::Time timeSinceLastUpdate = sf::Time::Zero;
+
+    mRoot->addChild(std::make_unique<Player>(Texture::PLAYER, mTextures));
+
     while (mWindow.isOpen())
     {
         processEvents();
@@ -69,13 +65,13 @@ void Game::update(sf::Time deltaTime)
 {
     sf::Vector2f movement(0.f, 0.f);
     if (mIsMovingUp)
-        movement.y -= 600.f;
+        movement.y -= 400.f;
     if (mIsMovingDown)
-        movement.y += 600.f;
+        movement.y += 400.f;
     if (mIsMovingLeft)
-        movement.x -= 600.f;
+        movement.x -= 400.f;
     if (mIsMovingRight)
-        movement.x += 600.f;
+        movement.x += 400.f;
 
     mSprite.move(movement * deltaTime.asSeconds());
 }
@@ -83,6 +79,6 @@ void Game::update(sf::Time deltaTime)
 void Game::render()
 {
     mWindow.clear(sf::Color(100, 100, 100, 255));
-    mWindow.draw(mSprite);
+    mWindow.draw(*mRoot);
     mWindow.display();
 }

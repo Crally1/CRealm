@@ -26,9 +26,11 @@ std::unique_ptr<SceneNode> SceneNode::delChild(const SceneNode &node)
     return res;
 }
 
-void SceneNode::Draw(sf::RenderTarget &window, sf::RenderStates states) const
+void SceneNode::draw(sf::RenderTarget &window, sf::RenderStates states) const
 {
     states.transform *= getTransform();
+
+    drawCurrent(window, states);
 
     for (const auto &node : mChildren)
     {
@@ -36,7 +38,43 @@ void SceneNode::Draw(sf::RenderTarget &window, sf::RenderStates states) const
     }
 }
 
-void SceneNode::DrawCurrent(sf::RenderTarget &window, sf::RenderStates states) const
+void SceneNode::drawCurrent(sf::RenderTarget &window, sf::RenderStates states) const
 {
 
+}
+
+void SceneNode::update(sf::Time dt)
+{
+    updateCurrent(dt);
+    updateChildren(dt);
+}
+
+void SceneNode::updateCurrent(sf::Time dt)
+{
+
+}
+
+void SceneNode::updateChildren(sf::Time dt)
+{
+    for (const auto &node : mChildren)
+    {
+        node->update(dt);
+    }
+}
+
+sf::Transform SceneNode::getWorldTransform() const
+{
+    sf::Transform transform = sf::Transform::Identity;
+
+    for (const SceneNode* node = this; node != nullptr; node = node->mParent)
+    {
+        transform = node->getTransform() * transform;
+    }
+
+    return transform;
+}
+
+sf::Vector2f SceneNode::getWorldPosition() const
+{
+    return getWorldTransform() * sf::Vector2f();
 }
