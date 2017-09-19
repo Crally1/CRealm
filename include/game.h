@@ -3,7 +3,7 @@
 
 
 #include <SFML/Graphics.hpp>
-#include <stdio.h>
+#include <iostream>
 #include "texture_holder.h"
 #include "scene_node.h"
 #include "entity.h"
