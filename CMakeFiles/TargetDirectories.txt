@@ -1,3 +1,0 @@
-/home/crally/CRealm/CMakeFiles/rebuild_cache.dir
-/home/crally/CRealm/CMakeFiles/CRealm.dir
-/home/crally/CRealm/CMakeFiles/edit_cache.dir
