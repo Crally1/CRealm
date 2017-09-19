@@ -8,6 +8,7 @@
 #include "scene_node.h"
 #include "entity.h"
 #include "player_entity.h"
+#include "sprite_node.h"
 
 class Game
 {
@@ -25,8 +26,6 @@ class Game
         sf::RenderWindow mWindow;
         sf::Texture mTexture;
         sf::Sprite mSprite;
-        std::unique_ptr<SceneNode> mRoot;
-        TextureHolder mTextures;
         bool mIsMovingUp = false;
         bool mIsMovingDown = false;
         bool mIsMovingLeft = false;

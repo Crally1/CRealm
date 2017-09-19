@@ -1,17 +1,14 @@
 #include "game.h"
 
-Game::Game() : mWindow(sf::VideoMode(740, 470), "Crally SFML"), mTimePerFrame(sf::seconds(1.f / 60.f)),
-    mRoot(new SceneNode) 
+Game::Game() : mWindow(sf::VideoMode(740, 470), "Crally SFML"), mTimePerFrame(sf::seconds(1.f / 60.f))
 {
-    mTextures.load(Texture::PLAYER, "/home/crally/CRealm/assets/wizard.png");
+
 }
 
 void Game::run()
 {
     sf::Clock clock;
     sf::Time timeSinceLastUpdate = sf::Time::Zero;
-
-    mRoot->addChild(std::make_unique<Player>(Texture::PLAYER, mTextures));
 
     while (mWindow.isOpen())
     {
@@ -79,6 +76,6 @@ void Game::update(sf::Time deltaTime)
 void Game::render()
 {
     mWindow.clear(sf::Color(100, 100, 100, 255));
-    mWindow.draw(*mRoot);
+    //mWindow.draw();
     mWindow.display();
 }
