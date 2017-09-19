@@ -11,11 +11,7 @@ class SpriteNode : public SceneNode
         SpriteNode(const sf::Texture &texture, const sf::IntRect& rect);
 
     private:
-<<<<<<< HEAD
         virtual void drawCurrent(sf::RenderTarget &target, sf::RenderStates states) const;
-=======
-        virtual void drawCurrent(sf::RenderTarget &target, sf::RenderStates) const;
->>>>>>> f035394a846f3cc9eb916888ddb2634817cf18bc
 
     private:
         sf::Sprite mSprite;
