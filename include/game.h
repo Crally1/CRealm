@@ -1,7 +1,6 @@
 #ifndef _GAME_H_
 #define _GAME_H_
 
-
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include "texture_holder.h"
@@ -31,7 +30,6 @@ class Game
         bool mIsMovingLeft = false;
         bool mIsMovingRight = false;
         sf::Time mTimePerFrame;
-
 };
 
 #endif
