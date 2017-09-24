@@ -6,6 +6,7 @@
 #include <SFML/Graphics.hpp>
 #include "sprite_node.h"
 
+
 class World : private sf::NonCopyable
 {
     public:

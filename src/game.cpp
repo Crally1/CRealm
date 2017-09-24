@@ -1,6 +1,8 @@
 #include "game.h"
 
-Game::Game() : mWindow(sf::VideoMode(740, 470), "Crally SFML"), mTimePerFrame(sf::seconds(1.f / 60.f)), mWorld(mWindow)
+const sf::Time TimePerFrame(sf::seconds(1.f / 60.f));
+
+Game::Game() : mWindow(sf::VideoMode(740, 470), "Crally SFML"), mWorld(mWindow)
 {
 
 }
@@ -14,12 +16,13 @@ void Game::run()
     {
         sf::Time elapsedTime = clock.restart();
         timeSinceLastUpdate += elapsedTime;
-        while (timeSinceLastUpdate > mTimePerFrame)
+
+        while (timeSinceLastUpdate > TimePerFrame)
         {
-            timeSinceLastUpdate -= mTimePerFrame;
+            timeSinceLastUpdate -= TimePerFrame;
 
             processEvents();
-            update(mTimePerFrame);
+            update(TimePerFrame);
         }
 
         render();

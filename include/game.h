@@ -27,7 +27,6 @@ class Game
         sf::Texture mTexture;
         sf::Sprite mSprite;
         World mWorld;
-        sf::Time mTimePerFrame;
 };
 
 #endif

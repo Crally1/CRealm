@@ -18,8 +18,8 @@ World::World(sf::RenderWindow &window) :mWindow(window),
 
 void World::loadTextures()
 {
-    mTextures.load(Texture::MAP, "/home/crally/CRealm/assets/stone.jpeg");
-    mTextures.load(Texture::PLAYER, "/home/crally/CRealm/assets/wizard.png");
+    mTextures.load(Texture::MAP, "/home/crally/CRealm/assets/sprites.png", sf::IntRect(192, 576, 32, 32));
+    mTextures.load(Texture::PLAYER, "/home/crally/CRealm/assets/sprites.png", sf::IntRect(864, 160, 32, 32));
 }
 
 void World::draw()
@@ -66,5 +66,6 @@ void World::buildScene()
     mPlayerEntity = leader.get();
     mPlayerEntity->setPosition(mSpawnPosition);
     mPlayerEntity->setVelocity(40.f, mScrollSpeed);
+    mPlayerEntity->setScale(2.2f, 2.2f);
     mSceneLayers[Foreground]->addChild(std::move(leader));
 }

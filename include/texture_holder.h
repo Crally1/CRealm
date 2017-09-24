@@ -19,6 +19,7 @@ class TextureHolder
 {
     public:
         void load(Texture::ID id, const std::string &fileName);
+        void load(Texture::ID id, const std::string &fileName, const sf::IntRect &rect);
         sf::Texture& get(Texture::ID id);
         const sf::Texture& get(Texture::ID id) const;
 
