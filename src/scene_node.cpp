@@ -31,16 +31,20 @@ void SceneNode::draw(sf::RenderTarget &window, sf::RenderStates states) const
     states.transform *= getTransform();
 
     drawCurrent(window, states);
-
-    for (const auto &node : mChildren)
-    {
-        node->draw(window, states);
-    }
+    drawChildren(window, states);
 }
 
 void SceneNode::drawCurrent(sf::RenderTarget &window, sf::RenderStates states) const
 {
+    //Do nothing by default
+}
 
+void SceneNode::drawChildren(sf::RenderTarget &target, sf::RenderStates states) const
+{
+    for (const auto &child : mChildren)
+    {
+        child->draw(target, states);
+    }
 }
 
 void SceneNode::update(sf::Time dt)
@@ -51,7 +55,7 @@ void SceneNode::update(sf::Time dt)
 
 void SceneNode::updateCurrent(sf::Time dt)
 {
-
+    //Do nothing by default
 }
 
 void SceneNode::updateChildren(sf::Time dt)

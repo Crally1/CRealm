@@ -5,6 +5,7 @@
 #include <map>
 #include <memory>
 #include <SFML/Graphics.hpp>
+#include <iostream>
 
 namespace Texture
 {

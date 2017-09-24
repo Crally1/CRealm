@@ -4,7 +4,10 @@ void TextureHolder::load(Texture::ID id, const std::string &fileName)
 {
     std::unique_ptr<sf::Texture> texture(new sf::Texture);
     if (!texture->loadFromFile(fileName))
+    {
+        std::cout << "Unable to load from FILE: " << fileName << std::endl;
         throw std::runtime_error("ERROR: Could not load texture from file: " + fileName);
+    }
 
     auto inserted = mTextureMap.insert(std::make_pair(id, std::move(texture)));
 }

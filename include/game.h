@@ -8,6 +8,7 @@
 #include "entity.h"
 #include "player_entity.h"
 #include "sprite_node.h"
+#include "world.h"
 
 class Game
 {
@@ -25,10 +26,7 @@ class Game
         sf::RenderWindow mWindow;
         sf::Texture mTexture;
         sf::Sprite mSprite;
-        bool mIsMovingUp = false;
-        bool mIsMovingDown = false;
-        bool mIsMovingLeft = false;
-        bool mIsMovingRight = false;
+        World mWorld;
         sf::Time mTimePerFrame;
 };
 
