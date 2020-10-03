@@ -2,7 +2,7 @@
 
 const sf::Time TimePerFrame(sf::seconds(1.0f / 60.0f));
 
-Game::Game() : mWindow(sf::VideoMode(800, 600), "Crally SFML"), mWorld(mWindow)
+Game::Game() : mWindow(sf::VideoMode(800, 600), "CRealm"), mWorld(mWindow)
 {
 
 }
