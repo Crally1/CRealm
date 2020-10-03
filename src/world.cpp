@@ -65,7 +65,7 @@ void World::buildScene()
     std::unique_ptr<Player> leader(new Player(Texture::PLAYER, mTextures));
     mPlayerEntity = leader.get();
     mPlayerEntity->setPosition(mSpawnPosition);
-    mPlayerEntity->setVelocity(40.f, mScrollSpeed);
+    mPlayerEntity->setVelocity(40.0f, mScrollSpeed);
     mPlayerEntity->setScale(2.2f, 2.2f);
     mSceneLayers[Foreground]->addChild(std::move(leader));
 }
