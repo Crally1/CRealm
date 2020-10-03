@@ -7,7 +7,7 @@ World::World(sf::RenderWindow &window) :mWindow(window),
     mSceneLayers(),
     mWorldBounds(0.0f, 0.0f, mWorldView.getSize().x, 2000.0f),
     mSpawnPosition(mWorldView.getSize().x / 2.f, mWorldBounds.height - mWorldView.getSize().y / 2.f), 
-    mScrollSpeed(-50.f),
+    mScrollSpeed(-50.0f),
     mPlayerEntity(nullptr)
 {
     loadTextures();
