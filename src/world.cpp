@@ -35,7 +35,7 @@ void World::update(sf::Time dt)
     sf::Vector2f position = mPlayerEntity->getPosition();
     sf::Vector2f velocity = mPlayerEntity->getVelocity();
 
-    if (position.x <= mWorldBounds.left + 150.f || position.x >= mWorldBounds.left + mWorldBounds.width - 150.0f)
+    if (position.x <= mWorldBounds.left + 150.0f || position.x >= mWorldBounds.left + mWorldBounds.width - 150.0f)
     {
         velocity.x = -velocity.x;
         mPlayerEntity->setVelocity(velocity);
