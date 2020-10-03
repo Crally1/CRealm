@@ -70,7 +70,7 @@ void Game::update(sf::Time elapsedTime)
 
 void Game::render()
 {
-    mWindow.clear(sf::Color(255, 255, 255, 255));
+    mWindow.clear(sf::Color(0, 0, 0, 255));
     mWorld.draw();
     mWindow.setView(mWindow.getDefaultView());
     mWindow.display();
