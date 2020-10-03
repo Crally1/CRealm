@@ -5,7 +5,7 @@ World::World(sf::RenderWindow &window) :mWindow(window),
     mTextures(),
     mSceneGraph(),
     mSceneLayers(),
-    mWorldBounds(0.f, 0.f, mWorldView.getSize().x, 2000.f),
+    mWorldBounds(0.0f, 0.0f, mWorldView.getSize().x, 2000.0f),
     mSpawnPosition(mWorldView.getSize().x / 2.f, mWorldBounds.height - mWorldView.getSize().y / 2.f), 
     mScrollSpeed(-50.f),
     mPlayerEntity(nullptr)
